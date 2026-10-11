@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="APEXLegend情報 — Apex Legendsの初心者向けガイド。日本語と英語に対応。">
+  <meta name="theme-color" content="#111827">
+  <title>APEXLegend情報 | Apex Legends Guide</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#141c30;--panel2:#1a2540;--text:#f4f7ff;--muted:#b7c3dc;--accent:#ff6b58;--accent2:#7dd3fc;--line:#2b3855;--radius:18px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% 0%,#202b4b 0,transparent 42%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7}
+    a{color:var(--accent2)}
+    .wrap{width:min(1080px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:5;background:rgba(11,16,32,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+    .brand{font-weight:900;letter-spacing:.04em;font-size:1.15rem}.brand span{color:var(--accent)}
+    .navright{display:flex;align-items:center;gap:12px}
+    button{cursor:pointer;font:inherit;border:1px solid var(--line);border-radius:999px;padding:8px 13px;background:var(--panel2);color:var(--text)}
+    button:hover,button:focus-visible{border-color:var(--accent2);outline:none}
+    .hero{padding:62px 0 38px}
+    .eyebrow{color:var(--accent2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}
+    h1{font-size:clamp(2.5rem,8vw,5rem);line-height:1.02;margin:12px 0 18px;letter-spacing:-.04em}
+    h1 em{font-style:normal;color:var(--accent)}
+    .lead{max-width:680px;color:var(--muted);font-size:1.08rem}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+    .primary{background:var(--accent);border-color:var(--accent);color:#1b1020;font-weight:800}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 10px}
+    .stat,.card,.notice{background:linear-gradient(145deg,var(--panel),#11182a);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+    .stat strong{display:block;font-size:1.3rem}.stat span{color:var(--muted);font-size:.9rem}
+    section{padding:28px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:16px}
+    h2{font-size:clamp(1.6rem,5vw,2.2rem);line-height:1.2;margin:0}
+    .section-head p{margin:0;color:var(--muted);max-width:440px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card .icon{font-size:1.7rem}.card h3{margin:8px 0}.card p{margin:0;color:var(--muted)}
+    .steps{counter-reset:step;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .step{position:relative;padding:18px 18px 18px 62px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+    .step:before{counter-increment:step;content:counter(step);position:absolute;left:18px;top:18px;width:30px;height:30px;border-radius:10px;background:var(--accent);color:#1b1020;font-weight:900;display:grid;place-items:center}
+    .step h3{margin:0 0 6px}.step p{margin:0;color:var(--muted)}
+    .glossary{width:100%;border-collapse:collapse;background:var(--panel);border-radius:var(--radius);overflow:hidden}
+    .glossary th,.glossary td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+    .glossary th{color:var(--accent2)}.glossary tr:last-child td{border-bottom:0}
+    .notice{color:var(--muted);font-size:.92rem}
+    footer{border-top:1px solid var(--line);margin-top:34px;padding:24px 0 38px;color:var(--muted);font-size:.88rem}
+    .small{font-size:.86rem;color:var(--muted)}
+    @media(max-width:720px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:8px}.hero{padding-top:44px}.nav{align-items:flex-start}.navright{gap:6px}button{padding:7px 10px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" style="text-decoration:none;color:inherit">APEX <span>LEGEND情報</span></a>
+    <div class="navright">
+      <a href="#guides" data-ja="ガイド" data-en="Guides">ガイド</a>
+      <a href="#glossary" data-ja="用語集" data-en="Glossary">用語集</a>
+      <button id="langBtn" type="button" aria-label="Switch language">EN / 日本語</button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow" data-ja="Apex Legends 初心者ガイド" data-en="Apex Legends Beginner Guide">Apex Legends 初心者ガイド</div>
+      <h1 data-ja="PLAY SMART.<br><em>PLAY TOGETHER.</em>" data-en="PLAY SMART.<br><em>PLAY TOGETHER.</em>">PLAY SMART.<br><em>PLAY TOGETHER.</em></h1>
+      <p class="lead" data-ja="Game Worldへようこそ！チームワーク、移動、マップの見方など、Apex Legendsを楽しむための基本を日本語と英語で紹介します。" data-en="Welcome to Game World! Learn the basics of teamwork, movement, and map awareness to enjoy Apex Legends—in English or Japanese.">Game Worldへようこそ！チームワーク、移動、マップの見方など、Apex Legendsを楽しむための基本を日本語と英語で紹介します。</p>
+      <div class="hero-actions">
+        <a class="primary" href="#guides" style="display:inline-block;padding:10px 16px;border-radius:999px;text-decoration:none;color:#1b1020;font-weight:800" data-ja="ガイドを読む ↓" data-en="Explore guides ↓">ガイドを読む ↓</a>
+        <a href="#glossary" style="display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none" data-ja="ゲーム用語を確認" data-en="Learn the terms">ゲーム用語を確認</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong data-ja="チームワーク" data-en="Teamwork">チームワーク</strong><span data-ja="仲間と連携しよう" data-en="Coordinate with your squad">仲間と連携しよう</span></div>
+        <div class="stat"><strong data-ja="マップ意識" data-en="Map Awareness">マップ意識</strong><span data-ja="安全な移動を考えよう" data-en="Plan where to rotate">安全な移動を考えよう</span></div>
+        <div class="stat"><strong data-ja="楽しく学ぶ" data-en="Learn & Enjoy">楽しく学ぶ</strong><span data-ja="少しずつ上達しよう" data-en="Improve one step at a time">少しずつ上達しよう</span></div>
+      </div>
+    </section>
+
+    <section id="guides">
+      <div class="section-head">
+        <h2 data-ja="基本ガイド" data-en="Essential Guides">基本ガイド</h2>
+        <p data-ja="まずはこの3つから。練習では勝敗より、ひとつ学べたことを大切にしよう。" data-en="Start with these three basics. Focus on what you learn, not just the result.">まずはこの3つから。練習では勝敗より、ひとつ学べたことを大切にしよう。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">🤝</div>
+          <h3 data-ja="チームと連携する" data-en="Work as a Team">チームと連携する</h3>
+          <p data-ja="ピンや短いメッセージで情報を共有。仲間と離れすぎず、困ったときは助け合おう。" data-en="Share information with pings and short messages. Stay near your squad and help each other when needed.">ピンや短いメッセージで情報を共有。仲間と離れすぎず、困ったときは助け合おう。</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧭</div>
+          <h3 data-ja="マップを確認する" data-en="Watch the Map">マップを確認する</h3>
+          <p data-ja="リングの位置と残り時間をこまめに確認。移動先を早めに相談して、あわてず行動しよう。" data-en="Check the ring location and timer regularly. Discuss where to go early so your team can move calmly.">リングの位置と残り時間をこまめに確認。移動先を早めに相談して、あわてず行動しよう。</p>
+        </article>
+        <article class="card">
+          <div class="icon">🏃</div>
+          <h3 data-ja="移動を練習する" data-en="Practice Movement">移動を練習する</h3>
+          <p data-ja="スライディングや登れる場所を練習場で試してみよう。周囲を見ながら、無理のないルートを選ぼう。" data-en="Try sliding and climbing in the practice area. Keep an eye on your surroundings and choose a route that feels safe.">スライディングや登れる場所を練習場で試してみよう。周囲を見ながら、無理のないルートを選ぼう。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2 data-ja="試合中のチェックリスト" data-en="In-Game Checklist">試合中のチェックリスト</h2>
+        <p data-ja="ひとつずつ確認するだけでも、落ち着いて判断しやすくなるよ。" data-en="A quick check can help you make calmer decisions.">ひとつずつ確認するだけでも、落ち着いて判断しやすくなるよ。</p>
+      </div>
+      <div class="steps">
+        <article class="step"><h3 data-ja="仲間の位置を確認" data-en="Check Your Squad">仲間の位置を確認</h3><p data-ja="マップや画面を見て、チームから離れすぎていないか確認。" data-en="Use the map and HUD to make sure you are not too far from your squad.">マップや画面を見て、チームから離れすぎていないか確認。</p></article>
+        <article class="step"><h3 data-ja="周囲を観察" data-en="Look Around">周囲を観察</h3><p data-ja="移動する前に地形や遮蔽物、次の目的地を確認しよう。" data-en="Before moving, check the terrain, cover, and your next destination.">移動する前に地形や遮蔽物、次の目的地を確認しよう。</p></article>
+        <article class="step"><h3 data-ja="短く情報共有" data-en="Communicate Clearly">短く情報共有</h3><p data-ja="長い説明より、場所や必要な助けを簡潔に伝えよう。" data-en="Keep callouts brief: share locations and what help is needed.">長い説明より、場所や必要な助けを簡潔に伝えよう。</p></article>
+        <article class="step"><h3 data-ja="試合後に振り返る" data-en="Review After the Match">試合後に振り返る</h3><p data-ja="うまくいったことを1つ、次に試すことを1つ考えてみよう。" data-en="Pick one thing that went well and one thing to try next time.">うまくいったことを1つ、次に試すことを1つ考えてみよう。</p></article>
+      </div>
+    </section>
+
+    <section id="glossary">
+      <div class="section-head">
+        <h2 data-ja="よく使うゲーム用語" data-en="Common Game Terms">よく使うゲーム用語</h2>
+        <p data-ja="英語のプレイヤーと遊ぶときにも役立つ基本用語。" data-en="Useful basics when playing with English-speaking players.">英語のプレイヤーと遊ぶときにも役立つ基本用語。</p>
+      </div>
+      <table class="glossary">
+        <thead><tr><th data-ja="用語" data-en="Term">用語</th><th data-ja="意味" data-en="Meaning">意味</th></tr></thead>
+        <tbody>
+          <tr><td>Squad</td><td data-ja="チーム、部隊" data-en="Your team">チーム、部隊</td></tr>
+          <tr><td>Ping</td><td data-ja="場所や情報を知らせるマーカー" data-en="A marker used to share a location or information">場所や情報を知らせるマーカー</td></tr>
+          <tr><td>Ring</td><td data-ja="プレイエリアを制限するリング" data-en="The zone that limits the playable area">プレイエリアを制限するリング</td></tr>
+          <tr><td>Rotation</td><td data-ja="次の場所へ移動すること" data-en="Moving to a new area">次の場所へ移動すること</td></tr>
+          <tr><td>Cooldown</td><td data-ja="アビリティを再使用できるまでの待ち時間" data-en="The time before an ability can be used again">アビリティを再使用できるまでの待ち時間</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="notice">
+        <strong data-ja="ファンサイトについて" data-en="About this fan site">ファンサイトについて</strong><br>
+        <span data-ja="Game Worldはファンが作成した非公式のガイドサイトです。Apex Legendsおよび関連する名称は各権利者に帰属します。公式サイトではなく、EAやRespawnとの提携・承認を示すものではありません。ゲームの仕様は更新される場合があるため、最新情報は公式のお知らせも確認してください。" data-en="Game World is an unofficial fan-made guide. Apex Legends and related names belong to their respective owners. This site is not official and does not imply endorsement by EA or Respawn. Game features can change, so check official announcements for the latest information.">Game Worldはファンが作成した非公式のガイドサイトです。Apex Legendsおよび関連する名称は各権利者に帰属します。公式サイトではなく、EAやRespawnとの提携・承認を示すものではありません。ゲームの仕様は更新される場合があるため、最新情報は公式のお知らせも確認してください。</span>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <strong>APEXLegend情報</strong> · <span data-ja="Apex Legends 初心者ガイド" data-en="Apex Legends Beginner Guide">Apex Legends 初心者ガイド</span>
+    <p class="small" data-ja="非公式ファンサイト。ゲーム名・関連名称の権利は各権利者に帰属します。" data-en="Unofficial fan site. Game names and related marks belong to their respective owners.">非公式ファンサイト。ゲーム名・関連名称の権利は各権利者に帰属します。</p>
+  </div>
+</footer>
+<script>
+  (function(){
+    let lang = 'ja';
+    const button = document.getElementById('langBtn');
+    function setLanguage(next){
+      lang = next;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-ja][data-en]').forEach(function(el){
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      button.textContent = lang === 'ja' ? 'English' : '日本語';
+    }
+    button.addEventListener('click', function(){ setLanguage(lang === 'ja' ? 'en' : 'ja'); });
+    setLanguage('ja');
+  })();
+</script>
+</body>
+</html>
